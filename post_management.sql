@@ -5,7 +5,7 @@
 -- Dumped from database version 15.7
 -- Dumped by pg_dump version 16.3
 
--- Started on 2025-03-15 21:51:46
+-- Started on 2025-03-15 22:56:16
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -130,10 +130,9 @@ COPY public.projects (id, created_at, description, title, updated_at, reset_toke
 --
 
 COPY public.user_dtls (id, nrc, email, name, password, phone, role, account_non_locked, failed_attempt, is_enable, lock_time, reset_token) FROM stdin;
-2	\N	robin@gmail.com	robin	$2a$10$KFrYePc4Vq8AMNhue/MtF.EpTzG5xF92CQpBApvPVF66QsS4LSLsO	57457458	ROLE_USER	t	0	t	\N	\N
 4	\N	nilar@gmail.com	nilar	$2a$10$MpVtt1E2E9U5rM77fAz4CuCP.UQK0/A7Gnh0zqG1EjDRtjUejah.S	475734	ROLE_USER	t	0	t	\N	\N
-5	\N	seku@gmail.com	seku	$2a$10$MuX9Rio4dvPnOSKiOmsRSururY7JPonBkTg.q3VF9FDWfkQM6Y4Ne	457357	ROLE_ADMIN	t	0	t	\N	\N
 6	\N	admin@gmail.com	admin	$2a$10$Uh5/FLaX7BFB4cHY5K254.sb8aTW.G3QNwraTTx9fLsORj7g2iClS	959569847622	ROLE_ADMIN	t	0	t	\N	\N
+2	5/gfhghfhjg	robin@gmail.com	robin	$2a$10$KFrYePc4Vq8AMNhue/MtF.EpTzG5xF92CQpBApvPVF66QsS4LSLsO	57457458	ROLE_USER	t	0	t	\N	\N
 \.
 
 
@@ -173,7 +172,7 @@ ALTER TABLE ONLY public.user_dtls
     ADD CONSTRAINT user_dtls_pkey PRIMARY KEY (id);
 
 
--- Completed on 2025-03-15 21:51:46
+-- Completed on 2025-03-15 22:56:17
 
 --
 -- PostgreSQL database dump complete
