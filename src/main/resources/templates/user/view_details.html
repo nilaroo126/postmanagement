@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      th:replace="base::layout(~{::section})">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<section class="vh-100" >
+    <div class="container h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100 ">
+            <div class="col-xl-9">
+
+                <h1 class="text-dark mb-4 mt-5  text-center" >Updating A Projects</h1>
+
+                <div class="card shadow p-3 mb-5 bg-white rounded " style="border-radius: 15px;" th:each="project:${project}">
+
+                        <input type="hidden" th:value="${project.id}" name="id" >
+                        <div class="card-body">
+
+                            <div class="row align-items-center pt-4 pb-3">
+                                <div class="col-md-3 ps-5">
+                                    <h6 class="mb-0">[[${project.title}]]</h6>
+                                </div>
+                                <div class="col-md-9 pe-5">
+                                    <input type="text" name="title" class="form-control form-control-lg"  th:value="${project.title}"/>
+                                </div>
+                            </div>
+
+                            <hr class="mx-n3">
+
+                            <hr class="mx-n3">
+
+                            <div class="row align-items-center py-3">
+                                <div class="col-md-3 ps-5">
+
+                                    <h6 class="mb-0">Project Descriptions</h6>
+
+                                </div>
+                                <div class="col-md-9 pe-5">
+
+                                    <textarea class="form-control" name="description" rows="5"  th:value="${project.description}"
+                                              placeholder="Message sent to the employer">[[${project.description}]]</textarea>
+
+                                </div>
+                            </div>
+
+                            <hr class="mx-n3">
+                            <div class="row align-items-center pt-4 pb-3">
+                                <div class="col-md-3 ps-5">
+                                    <h6 class="mb-0">Created At</h6>
+                                </div>
+                                <div class="col-md-9 pe-5">
+                                    <input type="date" name="created_at" th:value="${project.created_at}" class="form-control form-control-lg" />
+                                    [[${project.created_at}]]
+                                </div>
+                            </div>
+                            <hr class="mx-n3">
+                            <div class="row align-items-center pt-4 pb-3">
+                                <div class="col-md-3 ps-5">
+                                    <h6 class="mb-0">Updated At</h6>
+                                </div>
+                                <div class="col-md-9 pe-5">
+                                    <input type="date" name="updated_at" th:value="${project.updated_at}" class="form-control form-control-lg" />
+                                    [[${project.updated_at}]]
+                                </div>
+                            </div>
+
+
+                            <hr class="mx-n3">
+
+                            <div class="px-5 py-4">
+                                <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-lg">Post Project</button>
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</section>
+
+</body>
+</html>
